@@ -1,0 +1,56 @@
+.devbuddy-tooltip {
+  position: fixed;
+  z-index: 2147483647;
+  max-width: min(340px, calc(100vw - 16px));
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(125, 176, 255, 0.38);
+  background: linear-gradient(155deg, #091223 0%, #0f1f35 58%, #102946 100%);
+  color: #ecf5ff;
+  font-size: 13px;
+  line-height: 1.45;
+  letter-spacing: 0.1px;
+  box-shadow: 0 14px 34px rgba(3, 9, 20, 0.44);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  pointer-events: none;
+  animation: devbuddy-tooltip-in 140ms ease-out;
+}
+
+.devbuddy-tooltip::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  left: 18px;
+  top: -5px;
+  background: #0d1a2f;
+  border-left: 1px solid rgba(125, 176, 255, 0.38);
+  border-top: 1px solid rgba(125, 176, 255, 0.38);
+  transform: rotate(45deg);
+}
+
+.devbuddy-tooltip__term {
+  display: block;
+  margin-bottom: 4px;
+  color: #95c7ff;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.devbuddy-tooltip__meaning {
+  display: block;
+  color: #ecf5ff;
+}
+
+@keyframes devbuddy-tooltip-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
